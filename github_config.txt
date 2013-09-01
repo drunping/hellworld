@@ -1,0 +1,44 @@
+一.下载安装msysgit
+1.新建一个目录hellworld
+2.鼠标右键Git Bash Here
+3.$git Init 创建本地git。会生成.git目录，需要显示隐藏文件才能看到。
+二.配置git
+1.$ssh-keygen -C "luo86106@qq.com" -t rsa   后面会要求确认路径和输入密码，默认回车就行
+2.找到生成id_rsa.pub文件，复制里面的内容
+3.登入github，进入Account Settings，选择SSH Keys-->Add SSH key。把key粘贴上去。
+4.$ssh -T git@github.com  测试是否可以建立连接
+   可能会提示establish失败，敲入“yes”回车之后即可重新连上。
+5.
+$ git config --global user.name "your name"
+$ git config --global user.email "your_email@youremail.com"
+
+6.添加远程地址
+$ git remote add origin git@github.com:yourName/yourRepo.git
+
+三.提交，上传。前提：登陆github，创建仓库helloworld
+1.在本地仓库添加文件，比如README
+ $git add README 、git add -A 所有
+ $git commit -m "first commit"
+
+2 上传到github
+ $git push origin
+
+ps:
+  $git status 可查看文件的差别
+  $git add 添加要commit的文件
+
+四。.gitignore文件
+  忽略提交的目录或文件,比如可以这样写
+   bin
+   *.pyc
+  即忽略bin目录和.pyc文件
+
+五.tag
+ 查看tag: git tag
+ 创建tag: git tag v1.0
+          git tag -a v1.0 -m "first version"
+ 删除tag:
+	git tag -d v1.0
+ 验证tag:
+	git tag -v v1.0
+
