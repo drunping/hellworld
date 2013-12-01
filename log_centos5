@@ -1,0 +1,38 @@
+1.装虚拟机增强功能
+yum install kernel-headers
+yum install kernel-devel
+yum install gcc make
+yum install gcc-c++
+升级内核
+
+2.升级成python2.7
+
+3.安装git
+//先安装git依赖的包
+yum install zlib-devel
+yum install openssl-devel
+yum install perl
+yum install cpio
+yum install expat-devel
+yum install gettext-devel
+
+//安装autoconf
+yum install autoconf
+
+//安装git
+wget http://www.codemonkey.org.uk/projects/git-snapshots/git/git-latest.tar.gz
+tar xzvf git-latest.tar.gz
+cd git-{date}
+autoconf
+./configure --with-curl=/usr/local
+make 
+make install 
+
+生成密钥对，这样项目可以push到 GitHub上
+#ssh-keygen -t rsa -C "xxx@gmail.com"
+将.ssh/id_rsa.pub拷贝到GitHub网站
+测试是否能联通GitHub
+#ssh git@github.com
+
+
+4.安装pip
